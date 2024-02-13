@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./output.css">
+        <title>Lesson-4 movies data</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-black">
+        <header>
+            <nav class="bg-black text-white fixed top-0 right-0 left-0 z-50">
+                <div class="container m-auto">
+                    <div
+                        class="header__amc-control flex items-center justify-between border-b border-gray-400">
+                        <div class="movies__items flex">
+                            <img class="max-w-17 size-20 mx-5"
+                                src="./images/amc-img.svg"
+                                alt="amc-img">
+                            <ul class="flex items-center gap-x-7">
+                                <li>See a movie</li>
+                                <li>Find movie</li>
+                                <li>Food movie</li>
+                                <select class="bg-black">
+                                    <option value="More" selected>More</option>
+                                    <option value>Fantastik</option>
+                                    <option value>Dramatik</option>
+                                    <option value>Multifilm</option>
+                                </select>
+                            </ul>
+                        </div>
+                        <form class=" relative flex items-center">
+                            <input class="pl-3 p-2 rounded-sm w-64 bg-zinc-800"
+                                type="text"
+                                placeholder="Search...">
+                            <button class="absolute right-0 pr-2">
+                                <i
+                                    class="fa-solid fa-magnifying-glass text-white"></i>
+                            </button>
+                        </form>
+                        <div class="login__buttons items-center">
+                            <i
+                                class="fa-solid fa-user-plus ml-2 mb-1 border-2 w-9 rounded-full p-2"></i>
+                            <button
+                                class="hover:border-b-2 ml-3 mr-2 py-0 transition-all">SIGN
+                                UP</button>
+                            <span class="text-xs text-blue-500">OR</span>
+                            <button
+                                class="border-gray-300 hover:border-b-2 mr-8 ml-2 transition-all">LOG
+                                IN</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- 1-section -->
+        <section>
+            <div class="container m-auto">
+                <div
+                    class="movies__sort-all mx-5 mt-20 py-3">
+                    <div>
+                        <form class="js-movies-form flex gap-x-5">
+                            <select
+                                class="rounded py-1 px-2 bg-zinc-700 text-white">
+                                <option value="All" selected>All</option>
+                                <option value="salom">kino</option>
+                                <option value="salom">kino</option>
+                            </select>
+                            <select
+                                class="rounded py-1 px-2 bg-zinc-700 text-white">
+                                <option value="All" selected>A - Z</option>
+                                <option value="salom">A</option>
+                                <option value="salom">Z</option>
+                            </select>
+
+                            <input
+                                class="placeholder:text-gray-400 rounded py-1 px-2 bg-zinc-700 text-white"
+                                type="text"
+                                placeholder="Max year"
+                                aria-label="Max year">
+                            <input
+                                class="placeholder:text-gray-400 rounded py-1 px-2 bg-zinc-700 text-white"
+                                type="text" placeholder="Min year"
+                                aria-label="Min year">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- modal btn -->
+        <div class="hidden modal js-modal relative z-50"
+            aria-labelledby="modal-title"
+            role="dialog" aria-modal="true">
+            <div
+                class="fixed inset-0 bg-zinc-700 bg-opacity-75 transition-opacity"></div>
+
+            <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                <div
+                    class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <div
+                        class=" relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-10/12">
+                        <div
+                            class="js-res-btn bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                            <h2
+                                class="js-modat-title js-movie-title text-4xl pb-3"
+                                id="modal-title">Movie
+                                Title</h2>
+                            <div class="flex items-center gap-x-6">
+                                <div>
+                                    <iframe class="js-movie-image"
+                                        width="500"
+                                        height="375"
+                                        src="https://www.youtube-nocookie.com/embed/erLk59H86ww"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div
+                                    class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                    <div class="mb-5">
+                                        <i
+                                            class="fa-solid fa-star text-yellow-500 mr-1"></i>
+                                        <span
+                                            class="js-movies-rating text-lg "></span>
+                                        <i
+                                            class="fa-regular fa-calendar-days ml-6 mr-2"></i>
+                                        <span
+                                            class="js-movies-time mr-6 text-lg"></span>
+                                        <i class="fa-regular fa-clock mr-1"></i>
+                                        <span
+                                            class="js-movies-year text-lg"></span>
+                                    </div>
+                                    <h5
+                                        class="js-movies-categories text-lg my-2"></h5>
+                                    <div class="mt-2">
+                                        <p
+                                            class="js-modal-full-title text-sm text-gray-500"></p>
+                                    </div>
+                                    <button
+                                        class="pt-9 text-blue-500 border-b-2 border-blue-500"><a
+                                            href="#">Show on
+                                            IMDb</a>
+                                        <i
+                                            class="fa-solid fa-up-right-from-square text-blue-500 ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="js-modal-delete-btn absolute top-0 right-0 py-1 px-3 bg-red-500 text-white"><i
+                                class="js-modal-delete-btn fa-solid fa-x"></i></button>
+                        <div
+                            class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2-section -->
+        <section>
+            <div class="container m-auto">
+                <div class="section__movies-render text-white">
+                    <ul
+                        class="js-movies-result flex items-center justify-evenly  flex-wrap py-4 gap-10 border border-black bg-black m-auto mx-5">
+                    </ul>
+                </div>
+            </div>
+
+            <template class="js-template">
+                <li
+                    class="w-60 rounded-s-md bg-zinc-900 p-2 group/item hover:bg-zinc-800">
+                    <img class="js-img w-56 rounded-sm"
+                        src="./images/amc-img.svg"
+                        alt="movies-img">
+                    <h3 class="js-movies-title text-2xl mb-3 mt-3"></h3>
+                    <i class="fa-regular fa-star text-amber-300"></i>
+                    <span class="js-movies-rating text-sm"></span>
+                    <i class="fa-regular fa-calendar-days ml-2"></i>
+                    <span
+                        class="js-movies-time mr-2 text-sm"></span>
+                    <i class="fa-regular fa-clock"></i>
+                    <span class="js-movies-year text-sm"></span>
+                    <h5
+                        class="js-movies-categories text-lg my-2"></h5>
+                    <i
+                        class="fa-solid fa-circle-info absolute pt-3 pl-14"></i>
+                    <button
+                        class="js-modal-btn block border w-56 py-2 px-6 rounded-md border-emerald-800 bg-emerald-800">More
+                        info</button>
+                    <i class="fa-regular fa-bookmark absolute pt-6 pl-16"></i>
+                    <button
+                        class="block mt-3 border w-56 py-2 px-6 rounded-md border-yellow-600 bg-yellow-600">Add</button>
+
+                </li>
+            </template>
+
+        </section>
+
+        <script src="./js/movies.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
